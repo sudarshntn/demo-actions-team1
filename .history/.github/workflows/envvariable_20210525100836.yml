@@ -1,0 +1,24 @@
+name: Environmnet Variable on
+
+on: push
+env: 
+  WF_ENV: Accessible across all the jobs within the on
+  ENCRPTED_ENV: ${{ secrets.ENCRPTED_ENV }}
+  
+  jobs:
+    :
+      runs-on: 
+  
+      steps:
+        - name: 
+          run: 
+  
+
+
+jobs:
+  :
+    runs-on: 
+
+    steps:
+      - name: 
+        run: 

@@ -1,0 +1,25 @@
+name: Environmnet Variable on
+
+on: push
+env: 
+  WF_ENV: Accessible across all the jobs within the on
+  ENCRPTED_ENV: ${{ secrets.ENCRPTED_ENV }}
+  
+jobs:
+  log-env:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV_VAR: Available within the job kind
+    steps:
+      - name: Log my env variable
+        env: 
+          STEP_ENV_VAR: Available within the step
+        run: | 
+          echo "WF_ENV: ${ENCRPTED_ENV}"
+          echo "JOB_ENV: ${JOB_ENV_VAR}"  
+          echo "STEP1_ENV: ${STEP_ENV_VAR}"
+      - name: Second step
+        run: |
+          echo "WF_ENV: ${ENCRPTED_ENV}"
+          echo "JOB_ENV: ${JOB_ENV_VAR}"  
+          echo "STEP1_ENV: ${STEP_ENV_VAR}"

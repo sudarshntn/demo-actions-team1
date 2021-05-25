@@ -1,0 +1,22 @@
+name: Basic Workflow 1
+
+on: push
+
+jobs:
+  shell-commands: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo a string 
+        run: echo "Hello welcome to first workflow"
+      - name: Multiline sting show
+        run: |
+          node -v
+          npm -v 
+          python -v
+          pwd
+  run-on-windows-runner:
+    runs-on: windows-latest
+    steps:
+      - name: What is the directory of powershell
+        run: Get-Locationb       
